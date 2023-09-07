@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ejemplo 01</string>
+    <string name="enter_first_number">Introduce el primer número</string>
+    <string name="enter_second_number">Introduce el segundo número</string>
+    <string name="add">Sumar</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <EditText
+            android:id="@+id/first_number"
+            style="@style/enter_number_edit"
+            android:hint="@string/enter_first_number"
+            android:importantForAutofill="no"
+            android:tooltipText="@string/enter_first_number"/>
+
+    <EditText
+            android:id="@+id/second_number"
+            style="@style/enter_number_edit"
+            android:hint="@string/enter_second_number"
+            android:importantForAutofill="no"
+            android:tooltipText="@string/enter_second_number"/>
+
+    <Button
+            android:id="@+id/add_button"
+            style="@style/button"
+            android:text="@string/add"/>
+
+    <TextView
+            android:id="@+id/result"
+            style="@style/result_textview"
+            tools:text="25"/>
+
+</LinearLayout>
+
+

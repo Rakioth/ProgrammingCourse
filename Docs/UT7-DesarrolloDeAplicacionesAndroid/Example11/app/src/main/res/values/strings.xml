@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Example 11</string>
+    <string name="secret_one">Secret one</string>
+    <string name="secret_two">Secret two</string>
+</resources>

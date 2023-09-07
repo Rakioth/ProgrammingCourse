@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="child:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/child_jar</output-path>
+    <root id="archive" name="child.jar">
+      <element id="module-output" name="child" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/im4java-1.4.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

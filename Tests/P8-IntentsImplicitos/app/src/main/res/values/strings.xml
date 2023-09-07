@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">P8-IntentsImplicitos</string>
+    <string name="web_url">Enter a Web URL</string>
+    <string name="test_url">https://iesclaradelrey.es</string>
+    <string name="search">Search</string>
+</resources>

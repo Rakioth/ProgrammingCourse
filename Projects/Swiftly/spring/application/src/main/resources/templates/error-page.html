@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="">
+<div th:replace="~{fragments/head
+        :: head('swiftly.title.error')}"/>
+<body>
+<canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
+<div id="app">
+    <div class="error-page">
+        <h1 th:text="${status}"/>
+        <p th:text="#{__${message}__}"/>
+    </div>
+    <div th:replace="~{fragments/settings :: settings}"/>
+</div>
+</body>
+</html>

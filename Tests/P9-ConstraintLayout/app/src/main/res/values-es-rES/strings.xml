@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">P9-ConstraintLayout</string>
+    <string name="dummy_calculator">Calculadora Ficticia</string>
+    <string name="first_number">Primera Cifra</string>
+    <string name="second_number">Segunda Cifra</string>
+    <string name="add">Sumar</string>
+    <string name="clear">Despejar</string>
+    <string name="result">Resultado = %d</string>
+    <string name="symbol">Signo Más</string>
+    <string name="default_result">Resultado = 0</string>
+</resources>

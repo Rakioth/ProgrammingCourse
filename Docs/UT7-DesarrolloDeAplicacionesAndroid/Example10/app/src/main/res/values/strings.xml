@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Example 10</string>
+    <string name="load">load</string>
+    <string name="glide">Glide</string>
+    <string name="picasso">Picasso</string>
+    <string name="chainsaw_man">Chainsaw man</string>
+    <string name="scale_type">Scale Type</string>
+</resources>

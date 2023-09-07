@@ -1,0 +1,55 @@
+package com.raks.psp.example06;
+
+public class Counter {
+    private static final int MAX_COUNT = 1000;
+
+    private int c = 0;
+
+    public void increment() {
+        synchronized (this) {
+            c++;
+        }
+    }
+
+    public void decrement() {
+        synchronized (this) {
+            c--;
+        }
+    }
+
+    public int value() {
+        synchronized (this) {
+            return c;
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        var counter = new Counter();
+        var incrementer = new Thread(() -> {
+            for (int i = 0; i < MAX_COUNT; i++) {
+                counter.increment();
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        var decrementer = new Thread(() -> {
+            for (int i = 0; i < MAX_COUNT; i++) {
+                counter.decrement();
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        incrementer.start();
+        decrementer.start();
+        incrementer.join();
+        decrementer.join();
+        System.out.println(counter.value());
+    }
+}

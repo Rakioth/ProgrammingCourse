@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PokeStats</string>
+    <string name="set_logo">Set Logo Image</string>
+    <string name="set_symbol">Set Symbol Image</string>
+    <string name="card_image">Card Image</string>
+    <string name="card_info">Card Info</string>
+    <string name="card_market">Card Market</string>
+    <string name="card_info_details">[ #%s ]%n%s (%s)%n-%n%s%n-</string>
+    <string name="card_market_details">Low Price = %s%nTrend Price = %s%nAverage Sell Price = %s%nLast Updated Price: %s%n</string>
+    <string name="default_flavor">No Description</string>
+</resources>

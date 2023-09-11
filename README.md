@@ -2,7 +2,7 @@
   <💻> Programming Course
 </h1>
 
-<img src="icon.png" alt="Course Logo" align="left" width="192"/>
+<img src="https://github.com/Rakioth/ProgrammingCourse/assets/75569411/ce00e111-3736-43a4-8d6a-cb4c31b651e2" alt="Course Logo" align="left" width="192"/>
 
 ## Data Backup
 

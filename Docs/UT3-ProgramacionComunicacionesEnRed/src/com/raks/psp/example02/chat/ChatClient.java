@@ -9,6 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class ChatClient {
+
     private static final int MAX_PORT_NUMBER = 65535;
     private static final int MIN_PORT_NUMBER = 1;
 
@@ -43,10 +44,13 @@ public class ChatClient {
                 e.printStackTrace();
             }
         });
+
         uiThread.start();
         nwkThread.start();
+
         uiThread.join();
         nwkThread.join();
+
         try {
             _socket.close();
         } catch (IOException e) {
@@ -61,6 +65,7 @@ public class ChatClient {
         }
 
         InetAddress address = null;
+
         try {
             address = InetAddress.getByName(args[0]);
         } catch (UnknownHostException ex) {
@@ -74,6 +79,7 @@ public class ChatClient {
         }
 
         int portNumber = 0;
+
         try {
             portNumber = Integer.parseInt(args[1]);
         } catch (NumberFormatException e) {
@@ -89,4 +95,5 @@ public class ChatClient {
         ChatClient chatClient = new ChatClient(address, portNumber);
         chatClient.start();
     }
+
 }

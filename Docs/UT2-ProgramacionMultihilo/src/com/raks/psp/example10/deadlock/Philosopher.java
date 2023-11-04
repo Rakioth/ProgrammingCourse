@@ -1,6 +1,7 @@
 package com.raks.psp.example10.deadlock;
 
 public class Philosopher extends Thread {
+
     private final DiningPhilosophers _diningPhilosophers;
     private final int                _num;
     private final Fork               _leftFork;
@@ -38,4 +39,5 @@ public class Philosopher extends Thread {
                 break;
             }
     }
+
 }

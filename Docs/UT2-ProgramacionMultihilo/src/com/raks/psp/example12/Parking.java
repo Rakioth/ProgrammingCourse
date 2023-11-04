@@ -3,9 +3,10 @@ package com.raks.psp.example12;
 import java.util.concurrent.Semaphore;
 
 public class Parking {
+
     private static final int MIN_SPOTS = 2;
 
-    private Semaphore _availableSpots;
+    private final Semaphore _availableSpots;
 
     public Parking(int maxCapacity) {
         if (maxCapacity <= MIN_SPOTS) maxCapacity = MIN_SPOTS;
@@ -21,4 +22,5 @@ public class Parking {
         _availableSpots.release();
         System.out.printf("Car %s left. Available spots %d%n", car, _availableSpots.availablePermits());
     }
+
 }

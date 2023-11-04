@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.raks.room.db.Student;
 
 public class StudentViewHolder extends RecyclerView.ViewHolder {
+
     private final TextView _nameTextView;
     private final TextView _firstSurnameTextView;
     private final TextView _secondSurnameTextView;
@@ -28,4 +29,5 @@ public class StudentViewHolder extends RecyclerView.ViewHolder {
         _firstSurnameTextView.setText(student.firstSurname);
         _secondSurnameTextView.setText(student.secondSurname);
     }
+
 }

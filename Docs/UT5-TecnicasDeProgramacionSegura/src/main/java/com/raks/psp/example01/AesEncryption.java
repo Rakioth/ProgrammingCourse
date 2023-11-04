@@ -18,6 +18,7 @@ import java.security.spec.KeySpec;
 import java.util.Base64;
 
 public class AesEncryption {
+
     public static SecretKey generateKey(int bits) throws NoSuchAlgorithmException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
         keyGenerator.init(bits);
@@ -51,12 +52,11 @@ public class AesEncryption {
         return new String(decrypted);
     }
 
-    public static void encryptFile(String algorithm, SecretKey key, IvParameterSpec iv,
-                                   Path inputFile, Path outputFile) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
+    public static void encryptFile(String algorithm, SecretKey key, IvParameterSpec iv, Path inputFile, Path outputFile) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
         Cipher cipher = Cipher.getInstance(algorithm);
         cipher.init(Cipher.ENCRYPT_MODE, key, iv);
         try (
-                InputStream inputStream = Files.newInputStream(inputFile);
+                InputStream  inputStream  = Files.newInputStream(inputFile);
                 OutputStream outputStream = Files.newOutputStream(outputFile)
         ) {
             byte[] buffer = new byte[64];
@@ -72,12 +72,11 @@ public class AesEncryption {
         }
     }
 
-    public static void decryptFile(String algorithm, SecretKey key, IvParameterSpec iv,
-                                   Path inputFile, Path outputFile) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
+    public static void decryptFile(String algorithm, SecretKey key, IvParameterSpec iv, Path inputFile, Path outputFile) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
         Cipher cipher = Cipher.getInstance(algorithm);
         cipher.init(Cipher.DECRYPT_MODE, key, iv);
         try (
-                InputStream inputStream = Files.newInputStream(inputFile);
+                InputStream  inputStream  = Files.newInputStream(inputFile);
                 OutputStream outputStream = Files.newOutputStream(outputFile)
         ) {
             byte[] buffer = new byte[64];
@@ -92,4 +91,5 @@ public class AesEncryption {
                 outputStream.write(outputBytes);
         }
     }
+
 }

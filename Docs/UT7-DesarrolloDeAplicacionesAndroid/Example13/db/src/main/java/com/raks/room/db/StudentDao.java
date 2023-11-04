@@ -8,10 +8,11 @@ import java.util.List;
 
 @Dao
 public interface StudentDao {
-    @Query("SELECT * FROM student")
+
+    @Query("SELECT * FROM students")
     Single<List<Student>> getAll();
 
-    @Query("SELECT * FROM student WHERE sid = :id")
+    @Query("SELECT * FROM students WHERE sid = :id")
     Single<Student> find(int id);
 
     @Insert
@@ -22,4 +23,5 @@ public interface StudentDao {
 
     @Delete
     Completable deleteStudent(Student student);
+
 }

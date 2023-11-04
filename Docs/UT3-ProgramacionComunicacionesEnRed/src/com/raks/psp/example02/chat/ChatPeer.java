@@ -7,6 +7,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class ChatPeer extends Thread {
+
     private final ChatServer     _chatServer;
     private final Socket         _clientSocket;
     private final PrintWriter    _socketOut;
@@ -41,4 +42,5 @@ public class ChatPeer extends Thread {
     public void send(String msg) {
         _socketOut.println(msg);
     }
+
 }

@@ -4,8 +4,9 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "student")
+@Entity(tableName = "students")
 public class Student {
+
     @PrimaryKey(autoGenerate = true)
     public int    sid;
     @ColumnInfo
@@ -14,4 +15,5 @@ public class Student {
     public String firstSurname;
     @ColumnInfo(name = "second_surname")
     public String secondSurname;
+
 }

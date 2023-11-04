@@ -1,7 +1,9 @@
 package com.raks.psp.example07;
 
 public class Deadlock {
+
     static class Friend {
+
         private final String _name;
 
         public Friend(String name) {
@@ -20,12 +22,14 @@ public class Deadlock {
         public synchronized void bowBack(Friend bower) {
             System.out.format("%s: %s has bowed back to me!%n", _name, bower.getName());
         }
+
     }
 
     public static void main(String[] args) {
-        var alphonse = new Friend("Alphonse");
-        var gaston   = new Friend("Gaston");
+        Friend alphonse = new Friend("Alphonse");
+        Friend gaston   = new Friend("Gaston");
         new Thread(() -> alphonse.bow(gaston)).start();
         new Thread(() -> gaston.bow(alphonse)).start();
     }
+
 }

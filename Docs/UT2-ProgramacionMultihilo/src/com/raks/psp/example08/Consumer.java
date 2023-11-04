@@ -1,9 +1,10 @@
 package com.raks.psp.example08;
 
 public class Consumer extends Thread {
+
     private final Container _container;
 
-    Consumer(Container container) {
+    public Consumer(Container container) {
         _container = container;
     }
 
@@ -15,4 +16,5 @@ public class Consumer extends Thread {
             System.out.printf("Consumer: container.get(%d)%n", value);
         }
     }
+
 }

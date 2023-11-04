@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+
     private static final String TIMES_CALLED = "TIMES_CALLED";
+    private final static String TAG          = MainActivity.class.getName();
 
     private int _counter;
 
@@ -15,9 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState != null) {
             for (String key : savedInstanceState.keySet())
-                Log.i(MainActivity.class.getName(), savedInstanceState.get(key).toString());
+                Log.i(TAG, savedInstanceState.get(key).toString());
             _counter = savedInstanceState.getInt(TIMES_CALLED);
         }
         ((TextView) findViewById(R.id.times)).setText(String.format(getString(R.string.times_called), _counter));
@@ -29,4 +32,5 @@ public class MainActivity extends AppCompatActivity {
         _counter++;
         outState.putInt(TIMES_CALLED, _counter);
     }
+
 }

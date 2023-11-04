@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         findViewById(R.id.glide_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         findViewById(R.id.picasso_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,4 +39,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

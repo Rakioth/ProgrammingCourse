@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.raks.retrofit.pokemon.Species;
 
 public class SpeciesViewHolder extends RecyclerView.ViewHolder {
+
     private final TextView _speciesNameTextView;
     private       Species  _species;
 
@@ -25,4 +26,5 @@ public class SpeciesViewHolder extends RecyclerView.ViewHolder {
         _species = species;
         _speciesNameTextView.setText(species.name);
     }
+
 }

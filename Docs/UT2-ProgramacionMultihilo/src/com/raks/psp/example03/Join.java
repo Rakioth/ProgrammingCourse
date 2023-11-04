@@ -1,8 +1,9 @@
 package com.raks.psp.example03;
 
 public class Join {
+
     public static void main(String[] args) throws InterruptedException {
-        var thread = new Thread(() -> {
+        Thread thread = new Thread(() -> {
             for (int i = 0; i < 10; i++) {
                 System.out.println("Running");
                 try {
@@ -13,7 +14,9 @@ public class Join {
                 }
             }
         });
+
         thread.start();
         thread.join();
     }
+
 }

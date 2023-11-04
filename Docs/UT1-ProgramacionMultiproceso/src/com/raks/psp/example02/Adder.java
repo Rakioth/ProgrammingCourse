@@ -1,11 +1,12 @@
 package com.raks.psp.example02;
 
 public class Adder {
+
     public static void main(String[] args) {
-        var processName = args[0];
-        var startNo     = Integer.parseInt(args[1]);
-        var endNo       = Integer.parseInt(args[2]);
-        var result      = startNo;
+        String processName = args[0];
+        int    startNo     = Integer.parseInt(args[1]);
+        int    endNo       = Integer.parseInt(args[2]);
+        int    result      = startNo;
 
         for (int i = startNo; i <= endNo; i++) {
             result += i;
@@ -13,5 +14,5 @@ public class Adder {
         }
         System.out.println(result);
     }
-}
 
+}

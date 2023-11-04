@@ -7,6 +7,7 @@ import java.security.*;
 import java.util.Base64;
 
 public class Signing {
+
     public static String sign(Path file, PrivateKey privateKey) throws NoSuchAlgorithmException, InvalidKeyException, IOException, SignatureException {
         Signature signature = Signature.getInstance("SHA256withRSA");
         signature.initSign(privateKey);
@@ -24,4 +25,5 @@ public class Signing {
         signature.update(messageBytes);
         return signature.verify(receivedSignature);
     }
+
 }

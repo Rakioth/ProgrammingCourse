@@ -4,10 +4,12 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 class BoundedBuffer<E> {
+
     final ReentrantLock lock     = new ReentrantLock();
     final Condition     notFull  = lock.newCondition();
     final Condition     notEmpty = lock.newCondition();
     final Object[]      items    = new Object[10];
+
     int putptr, takeptr, count;
 
     public void put(E x) throws InterruptedException {
@@ -47,46 +49,46 @@ class BoundedBuffer<E> {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        var stringBoundedBuffer = new BoundedBuffer<String>();
-        var putter = new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        stringBoundedBuffer.put("yo");
-                        Thread.sleep((long) (Math.random() * 1000));
-                    } catch (InterruptedException e) {
-                        break;
-                    }
+        BoundedBuffer<String> stringBoundedBuffer = new BoundedBuffer<>();
+
+        Runnable putter = () -> {
+            while (true) {
+                try {
+                    stringBoundedBuffer.put("yo");
+                    Thread.sleep((long) (Math.random() * 1000));
+                } catch (InterruptedException e) {
+                    break;
                 }
             }
         };
-        var taker = new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        stringBoundedBuffer.take();
-                        Thread.sleep((long) (Math.random() * 1000));
-                    } catch (InterruptedException e) {
-                        break;
-                    }
+        Runnable taker = () -> {
+            while (true) {
+                try {
+                    stringBoundedBuffer.take();
+                    Thread.sleep((long) (Math.random() * 1000));
+                } catch (InterruptedException e) {
+                    break;
                 }
             }
         };
 
-        var putter1 = new Thread(putter);
-        var putter2 = new Thread(putter);
-        var taker1  = new Thread(taker);
+        Thread putter1 = new Thread(putter);
+        Thread putter2 = new Thread(putter);
+        Thread taker1  = new Thread(taker);
+
         putter1.start();
         putter2.start();
         taker1.start();
+
         Thread.sleep(10000);
+
         putter1.interrupt();
         putter2.interrupt();
         taker1.interrupt();
+
         putter1.join();
         putter2.join();
         taker1.join();
     }
+
 }

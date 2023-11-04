@@ -15,16 +15,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText          globalPrefText = findViewById(R.id.global_pref_text);
-        SharedPreferences appPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        globalPrefText.setText(appPreferences.getString(getString(R.string.global_pref), ""));
+        final EditText globalPrefText    = findViewById(R.id.global_pref_text);
+        final EditText namedFilePrefText = findViewById(R.id.named_file_pref_text);
+        final EditText activityPrefText  = findViewById(R.id.activity_pref_text);
 
-        EditText          namedFilePrefText = findViewById(R.id.named_file_pref_text);
-        SharedPreferences namedPreferences  = this.getSharedPreferences(getString(R.string.NAMED_PREFERENCES_FILE), Context.MODE_PRIVATE);
-        namedFilePrefText.setText(namedPreferences.getString(getString(R.string.named_pref), ""));
-
-        EditText          activityPrefText = findViewById(R.id.activity_pref_text);
+        SharedPreferences appPreferences   = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences namedPreferences = this.getSharedPreferences(getString(R.string.NAMED_PREFERENCES_FILE), Context.MODE_PRIVATE);
         SharedPreferences preferences      = this.getPreferences(Context.MODE_PRIVATE);
+
+        globalPrefText.setText(appPreferences.getString(getString(R.string.global_pref), ""));
+        namedFilePrefText.setText(namedPreferences.getString(getString(R.string.named_pref), ""));
         activityPrefText.setText(preferences.getString(getString(R.string.activity_pref), ""));
 
         findViewById(R.id.button).setOnClickListener(v -> {
@@ -46,4 +46,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
 }

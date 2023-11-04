@@ -3,7 +3,6 @@ package com.raks.retrofit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,12 +23,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String         TAG      = MainActivity.class.getName();
-    private              PokemonService _service;
-    private              int            _offset  = 0;
-    private static final int            LIMIT    = 20;
-    private              List<Species>  _species = new ArrayList<>();
-    private              SpeciesAdapter _adapter;
+
+    private static final String TAG   = MainActivity.class.getName();
+    private static final int    LIMIT = 20;
+
+    private PokemonService _service;
+    private SpeciesAdapter _adapter;
+    private List<Species>  _species = new ArrayList<>();
+    private int            _offset  = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl("https://pokeapi.co/api/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
         _service = retrofit.create(PokemonService.class);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
@@ -82,4 +84,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

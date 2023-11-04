@@ -9,6 +9,7 @@ import java.util.Map;
 
 @Repository
 public class UserRepository implements com.raks.psp.example02.data.UserRepository {
+
     private Map<String, User> _usersByName = new HashMap<>();
 
     public UserRepository(PasswordEncoder passwordEncoder) {
@@ -29,4 +30,5 @@ public class UserRepository implements com.raks.psp.example02.data.UserRepositor
     public User findByUsername(String username) {
         return _usersByName.get(username);
     }
+
 }

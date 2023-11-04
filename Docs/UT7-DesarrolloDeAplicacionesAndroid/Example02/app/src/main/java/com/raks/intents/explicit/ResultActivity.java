@@ -6,6 +6,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,7 +16,8 @@ public class ResultActivity extends AppCompatActivity {
         int    num1   = (int) intent.getSerializableExtra("NUM1");
         int    num2   = (int) intent.getSerializableExtra("NUM2");
 
-        TextView textView = findViewById(R.id.resut);
-        textView.setText(String.format("%d + %d = %d", num1, num2, num1 + num2));
+        ((TextView) findViewById(R.id.result))
+                .setText(String.format("%d + %d = %d", num1, num2, num1 + num2));
     }
+
 }

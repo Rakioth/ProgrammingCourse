@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PlayerController {
+
     private final PlayerRepository _playerRepository;
 
     @Autowired
-    PlayerController(PlayerRepository playerRepository) {
+    public PlayerController(PlayerRepository playerRepository) {
         _playerRepository = playerRepository;
     }
 
@@ -18,4 +19,5 @@ public class PlayerController {
     public Iterable<PlayerDTO> getAll() {
         return _playerRepository.findAll().stream().map(PlayerDTO::from).toList();
     }
+
 }

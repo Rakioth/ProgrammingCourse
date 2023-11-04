@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MemeAdapter.OnMemeClickListener {
+
     private static final String TAG = MainActivity.class.getName();
 
     private final List<Meme> _memes = Arrays.asList(
@@ -21,15 +22,17 @@ public class MainActivity extends AppCompatActivity implements MemeAdapter.OnMem
             new Meme("One Does Not Simply", R.drawable.one_does_not_simply, "One does not simply", "Walk into mordor"),
             new Meme("Bad Luck Brian", R.drawable.bad_luck_brian, "", "Bad Luck Brian!"),
             new Meme("First World Problems", R.drawable.first_world_problems, "", ""),
-            new Meme("Am I The Only One Around Here", R.drawable.am_i_the_only_one_around_here, "Am I The Only One Around Here", "Who ___"));
+            new Meme("Am I The Only One Around Here", R.drawable.am_i_the_only_one_around_here, "Am I The Only One Around Here", "Who ___")
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //recyclerView.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
+//        recyclerView.setLayoutManager(new GridLayoutManager(this, 2, RecyclerView.VERTICAL, false));
         recyclerView.setAdapter(new MemeAdapter(_memes, this));
     }
 
@@ -38,4 +41,5 @@ public class MainActivity extends AppCompatActivity implements MemeAdapter.OnMem
         Meme meme = _memes.get(position);
         Log.i(TAG, String.format("Meme %s was clicked", meme.name));
     }
+
 }

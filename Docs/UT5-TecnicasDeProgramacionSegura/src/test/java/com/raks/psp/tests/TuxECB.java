@@ -18,6 +18,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class TuxECB {
+
     public static void main(String[] args) throws URISyntaxException, NoSuchAlgorithmException, IOException, InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
         String resourceName = "Tux.ppm";
 
@@ -28,18 +29,17 @@ public class TuxECB {
 
         FileInputStream  ppmReader = new FileInputStream(ppmInputPath.toFile());
         FileOutputStream ppmWriter = new FileOutputStream(ppmOutputPath.toFile());
-        //Copy header from original PPM file to destination file
+        // Copy header from original PPM file to destination file
         byte[] ppmHeader = ppmReader.readNBytes(15);
         ppmWriter.write(ppmHeader);
 
-        //Copy pixel map from original file to binary file. There's 1 byte per color and there's 3 colors, hence we use a multiple of 3 for the buffer
+        // Copy pixel map from original file to binary file. There's 1 byte per color and there's 3 colors, hence we use a multiple of 3 for the buffer
         FileOutputStream binWriter = new FileOutputStream(pixelMapPath.toFile());
         byte[]           buffer    = new byte[96];
         int              read;
-        while ((read = ppmReader.read(buffer)) > 0) {
+        while ((read = ppmReader.read(buffer)) > 0)
             binWriter.write(buffer, 0, read);
-        }
-        //Done reading the source PPM file, close readers.
+        // Done reading the source PPM file, close readers.
         binWriter.close();
         ppmReader.close();
 
@@ -47,15 +47,14 @@ public class TuxECB {
         SecretKey secretKey = AesEncryption.generateKey(128);
         AesEncryption.encryptFile("AES/ECB/PKCS5Padding ", secretKey, null, pixelMapPath, encryptedPixelMapPath);
 
-        //Assemble the final PPM with the encrypted pixel map
+        // Assemble the final PPM with the encrypted pixel map
         FileInputStream encryptedBinReader = new FileInputStream(encryptedPixelMapPath.toFile());
-        while ((read = encryptedBinReader.read(buffer)) > 0) {
+        while ((read = encryptedBinReader.read(buffer)) > 0)
             ppmWriter.write(buffer, 0, read);
-        }
         encryptedBinReader.close();
         ppmWriter.close();
 
-        //Delete temp files
+        // Delete temp files
         Files.delete(pixelMapPath);
         Files.delete(encryptedPixelMapPath);
     }

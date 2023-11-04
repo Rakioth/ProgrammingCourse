@@ -1,6 +1,7 @@
 package com.raks.psp.example08;
 
-class Container {
+public class Container {
+
     private int     _value;
     private boolean _valueAvailable;
 
@@ -27,4 +28,5 @@ class Container {
         notifyAll();
         return _value;
     }
+
 }

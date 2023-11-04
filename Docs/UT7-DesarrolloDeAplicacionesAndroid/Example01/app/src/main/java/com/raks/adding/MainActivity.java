@@ -1,25 +1,28 @@
 package com.raks.adding;
 
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.add_button);
-        button.setOnClickListener(v -> {
-            EditText firstNumberEditText  = findViewById(R.id.first_number);
-            String   firstNumberText      = firstNumberEditText.getText().toString();
-            int      firstNumber          = Integer.parseInt(firstNumberText);
-            EditText secondNumberEditText = findViewById(R.id.second_number);
-            String   secondNumberText     = secondNumberEditText.getText().toString();
-            int      secondNumber         = Integer.parseInt(secondNumberText);
-            ((TextView) findViewById(R.id.result)).setText(String.valueOf(firstNumber + secondNumber));
-        });
+
+        final EditText firstNum  = findViewById(R.id.first_number);
+        final EditText secondNum = findViewById(R.id.second_number);
+
+        findViewById(R.id.add_button)
+                .setOnClickListener(view -> {
+                    int num1 = Integer.parseInt(firstNum.getText().toString());
+                    int num2 = Integer.parseInt(secondNum.getText().toString());
+
+                    ((TextView) findViewById(R.id.result))
+                            .setText(String.valueOf(num1 + num2));
+                });
     }
+
 }

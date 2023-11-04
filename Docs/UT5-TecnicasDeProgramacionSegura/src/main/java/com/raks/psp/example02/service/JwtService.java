@@ -11,9 +11,10 @@ import java.util.Date;
 
 @Service
 public class JwtService {
+
     private final byte[] _secretKeyByteArray;
 
-    JwtService(@Value("${jwt.secret-key}") String secretKey) {
+    public JwtService(@Value("${jwt.secret-key}") String secretKey) {
         _secretKeyByteArray = secretKey.getBytes();
     }
 
@@ -45,10 +46,13 @@ public class JwtService {
             throw new JwtParseException(ex);
         }
     }
+
 }
 
 class JwtParseException extends RuntimeException {
+
     public JwtParseException(Exception ex) {
         super(ex);
     }
+
 }

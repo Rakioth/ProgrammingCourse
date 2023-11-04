@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public abstract class FileDownloader {
+
     protected final URL  _url;
     protected final Path _path;
 
@@ -19,4 +20,5 @@ public abstract class FileDownloader {
     }
 
     public abstract void download() throws IOException;
+
 }

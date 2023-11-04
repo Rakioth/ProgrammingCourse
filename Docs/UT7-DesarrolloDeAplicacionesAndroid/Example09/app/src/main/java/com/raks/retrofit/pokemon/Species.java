@@ -3,6 +3,7 @@ package com.raks.retrofit.pokemon;
 import java.net.URI;
 
 public class Species {
+
     public String name;
     public URI    url;
 
@@ -13,4 +14,5 @@ public class Species {
                ", url=" + url +
                '}';
     }
+
 }

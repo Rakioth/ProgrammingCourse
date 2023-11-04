@@ -8,6 +8,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class EchoServer {
+
     public static void main(String[] args) throws IOException {
         if (args.length != 1) {
             System.err.println("USAGE: Java EchoServer <Port Number>");
@@ -15,13 +16,14 @@ public class EchoServer {
         }
 
         int portNumber = Integer.parseInt(args[0]);
+
         try (ServerSocket echoSocket = new ServerSocket(portNumber)) {
             while (true) {
                 Socket clientSocket = echoSocket.accept();
                 new Thread(() -> {
                     try (
-                            PrintWriter socketOut = new PrintWriter(clientSocket.getOutputStream(), true);
-                            BufferedReader socketIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
+                            PrintWriter    socketOut = new PrintWriter(clientSocket.getOutputStream(), true);
+                            BufferedReader socketIn  = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
                     ) {
                         String inputLine;
                         while ((inputLine = socketIn.readLine()) != null) {
@@ -44,4 +46,5 @@ public class EchoServer {
             System.exit(1);
         }
     }
+
 }

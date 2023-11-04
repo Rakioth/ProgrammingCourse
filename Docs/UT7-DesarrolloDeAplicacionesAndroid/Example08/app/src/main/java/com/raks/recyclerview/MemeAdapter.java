@@ -40,4 +40,5 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeViewHolder> {
     public int getItemCount() {
         return _memes.size();
     }
+
 }

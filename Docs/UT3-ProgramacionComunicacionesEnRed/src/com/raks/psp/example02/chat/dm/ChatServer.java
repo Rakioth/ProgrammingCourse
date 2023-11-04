@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 public class ChatServer {
+
     private static final int MAX_PORT_NUMBER = 65535;
     private static final int MIN_PORT_NUMBER = 1;
 
@@ -96,11 +97,12 @@ public class ChatServer {
     public synchronized void removeConnection(String nickname) throws IOException {
         System.out.printf("%sDEBUG: %s left the Chat%s%n", ConsoleColors.ANSI_YELLOW, nickname, ConsoleColors.ANSI_RESET);
         _chatUsers.remove(nickname);
-        if (_chatUsers.size() == 0) _serverSocket.close();
+        if (_chatUsers.isEmpty()) _serverSocket.close();
     }
 
     public static void main(String[] args) throws IOException {
         int portNumber = 0;
+
         try {
             portNumber = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
@@ -115,4 +117,5 @@ public class ChatServer {
 
         new ChatServer(portNumber).start();
     }
+
 }

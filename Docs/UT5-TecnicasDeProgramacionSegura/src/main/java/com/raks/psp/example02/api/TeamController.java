@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TeamController {
+
     private final TeamRepository _teamRepository;
 
     @Autowired
@@ -15,8 +16,9 @@ public class TeamController {
         _teamRepository = teamRepository;
     }
 
-    @GetMapping("teams")
+    @GetMapping("/teams")
     public Iterable<Team> getAllTeams() {
         return _teamRepository.findAll();
     }
+
 }

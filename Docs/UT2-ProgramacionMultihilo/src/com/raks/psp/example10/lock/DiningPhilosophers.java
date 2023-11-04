@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiningPhilosophers {
+
     private static final int NUM_FORKS = 3;
 
     private final List<Philosopher> _philosophers;
@@ -21,4 +22,5 @@ public class DiningPhilosophers {
     public void dine() {
         _philosophers.forEach(Thread::start);
     }
+
 }

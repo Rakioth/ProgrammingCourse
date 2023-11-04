@@ -11,13 +11,15 @@ import com.bumptech.glide.request.transition.DrawableCrossFadeFactory;
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class GlideActivity extends AppCompatActivity {
+
     DrawableCrossFadeFactory factory = new DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glide);
-        findViewById(R.id.load_button).setOnClickListener(v -> {
+
+        findViewById(R.id.load_button).setOnClickListener(view -> {
             ImageView imageView = findViewById(R.id.image_view);
             Glide.with(GlideActivity.this)
                  .load("https://picsum.photos/200/300")
@@ -25,9 +27,10 @@ public class GlideActivity extends AppCompatActivity {
                                 .fitCenter()
                                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                                 .skipMemoryCache(true)
-                       )
+                 )
                  .transition(withCrossFade(factory))
                  .into(imageView);
         });
     }
+
 }

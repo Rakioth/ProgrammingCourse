@@ -13,12 +13,12 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int    id;
+    private Integer id;
 
     @Column
-    private String name;
+    private String  name;
 
     @Column
-    private String city;
+    private String  city;
 
 }

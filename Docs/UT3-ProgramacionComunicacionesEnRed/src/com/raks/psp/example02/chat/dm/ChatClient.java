@@ -9,6 +9,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 public class ChatClient {
+
     private static final int MAX_PORT_NUMBER = 65535;
     private static final int MIN_PORT_NUMBER = 1;
 
@@ -27,11 +28,13 @@ public class ChatClient {
     private void giveNickname() throws IOException {
         String peerInput = "";
         String nickname;
+
         do {
             if (!peerInput.isEmpty()) System.out.println(peerInput);
             System.out.printf("%sGive me your Nickname: %s", ConsoleColors.ANSI_CYAN, ConsoleColors.ANSI_RESET);
             _socketOut.println(nickname = _stdIn.readLine());
         } while (!"/approved".equalsIgnoreCase(peerInput = _socketIn.readLine()));
+
         System.out.printf("%s=== Welcome to the Chat %s! ===%s%n", ConsoleColors.ANSI_PURPLE, nickname, ConsoleColors.ANSI_RESET);
     }
 
@@ -54,9 +57,12 @@ public class ChatClient {
                 System.err.println("Client Closed");
             }
         });
+
         stdThread.start();
         nwkThread.start();
+
         stdThread.join();
+
         _stdIn.close();
         _socket.close();
     }
@@ -68,6 +74,7 @@ public class ChatClient {
         }
 
         InetAddress address = null;
+
         try {
             address = InetAddress.getByName(args[0]);
         } catch (UnknownHostException ex) {
@@ -81,6 +88,7 @@ public class ChatClient {
         }
 
         int portNumber = 0;
+
         try {
             portNumber = Integer.parseInt(args[1]);
         } catch (NumberFormatException e) {
@@ -95,4 +103,5 @@ public class ChatClient {
 
         new ChatClient(address, portNumber).start();
     }
+
 }

@@ -10,8 +10,9 @@ import java.security.spec.KeySpec;
 import java.util.Base64;
 
 public class PasswordHashing {
-    public static final int SALT_SIZE_BYTES = 16;
-    public static final int HASH_SIZE_BYTES = 32;
+
+    private static final int SALT_SIZE_BYTES = 16;
+    private static final int HASH_SIZE_BYTES = 32;
 
     public static String hash(String password) throws InvalidKeySpecException, NoSuchAlgorithmException {
         byte[] salt = new byte[SALT_SIZE_BYTES];
@@ -37,4 +38,5 @@ public class PasswordHashing {
         byte[] encoded = encode(rawPassword, salt);
         return MessageDigest.isEqual(concatenated, encoded);
     }
+
 }

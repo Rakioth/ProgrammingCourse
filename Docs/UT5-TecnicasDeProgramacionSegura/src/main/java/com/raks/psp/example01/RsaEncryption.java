@@ -17,10 +17,11 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
 public class RsaEncryption {
-    public static final String BEGIN_PRIVATE_KEY    = "-----BEGIN PRIVATE KEY-----";
-    public static final String END_PRIVATE_KEY      = "-----END PRIVATE KEY-----";
-    public static final String BEGIN_RSA_PUBLIC_KEY = "-----BEGIN RSA PUBLIC KEY-----";
-    public static final String END_RSA_PUBLIC_KEY   = "-----END RSA PUBLIC KEY-----";
+
+    private static final String BEGIN_PRIVATE_KEY    = "-----BEGIN PRIVATE KEY-----";
+    private static final String END_PRIVATE_KEY      = "-----END PRIVATE KEY-----";
+    private static final String BEGIN_RSA_PUBLIC_KEY = "-----BEGIN RSA PUBLIC KEY-----";
+    private static final String END_RSA_PUBLIC_KEY   = "-----END RSA PUBLIC KEY-----";
 
     public static KeyPair generateKeyPair(int bits) throws NoSuchAlgorithmException {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
@@ -31,6 +32,7 @@ public class RsaEncryption {
     public static KeyPair writeKeyPair(Path publicKeyPath, Path privateKeyPath, int bits) throws NoSuchAlgorithmException, IOException {
         KeyPair        keyPair    = generateKeyPair(bits);
         Base64.Encoder pemEncoder = Base64.getMimeEncoder(64, System.lineSeparator().getBytes());
+
         try (PrintWriter pubKeyWriter = new PrintWriter(new FileOutputStream(publicKeyPath.toFile()))) {
             pubKeyWriter.println(BEGIN_RSA_PUBLIC_KEY);
             pubKeyWriter.println(pemEncoder.encodeToString(keyPair.getPublic().getEncoded()));
@@ -57,6 +59,7 @@ public class RsaEncryption {
             KeyFactory         keyFacPub   = KeyFactory.getInstance("RSA");
             pub = keyFacPub.generatePublic(pubKeySpec);
         }
+
         PrivateKey priv;
         try (FileInputStream privKeyInputStream = new FileInputStream(privateKeyPath.toFile())) {
             String fileContents = new String(privKeyInputStream.readAllBytes());
@@ -73,8 +76,7 @@ public class RsaEncryption {
         return new KeyPair(pub, priv);
     }
 
-    public static String encrypt(String plainText, Key key) throws
-                                                            NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    public static String encrypt(String plainText, Key key) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.ENCRYPT_MODE, key);
         byte[] plainTextBytes = plainText.getBytes(StandardCharsets.UTF_8);
@@ -82,12 +84,12 @@ public class RsaEncryption {
         return Base64.getEncoder().encodeToString(cypherBytes);
     }
 
-    public static String decrypt(String cypherText, Key key) throws
-                                                             NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    public static String decrypt(String cypherText, Key key) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
         Cipher cipher = Cipher.getInstance("RSA");
         cipher.init(Cipher.DECRYPT_MODE, key);
         byte[] cypherTextBytes = Base64.getDecoder().decode(cypherText);
         byte[] plainTextBytes  = cipher.doFinal(cypherTextBytes);
         return new String(plainTextBytes);
     }
+
 }

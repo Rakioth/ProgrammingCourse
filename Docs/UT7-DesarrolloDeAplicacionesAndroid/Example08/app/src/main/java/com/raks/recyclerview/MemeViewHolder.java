@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MemeViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
     private final TextView                        _nameTextView;
     private final TextView                        _topTextView;
     private final ImageView                       _imageView;
@@ -35,4 +36,5 @@ public class MemeViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public void onClick(View view) {
         _onMemeClickListener.onMemeClick(getAdapterPosition());
     }
+
 }

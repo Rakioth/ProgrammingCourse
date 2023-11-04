@@ -12,7 +12,7 @@ import io.reactivex.rxjava3.functions.Consumer;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class EditStudentActivity extends AppCompatActivity {
-    public static final String TAG            = EditStudentActivity.class.getName();
+
     public static final String STUDENT_ID_KEY = "STUDENT_ID";
 
     @Override
@@ -49,6 +49,7 @@ public class EditStudentActivity extends AppCompatActivity {
         };
 
         int studentId = getIntent().getIntExtra(STUDENT_ID_KEY, 0);
+
         if (studentId > 0)
             appDatabase.studentDao().find(studentId).subscribeOn(Schedulers.io()).subscribe(studentConsumer);
         else
@@ -58,4 +59,5 @@ public class EditStudentActivity extends AppCompatActivity {
                 throwable.printStackTrace();
             }
     }
+
 }

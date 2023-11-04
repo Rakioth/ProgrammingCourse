@@ -1,6 +1,7 @@
 package com.raks.recyclerview;
 
 public class Meme {
+
     final String name;
     final int    imageResId;
     final String topText;
@@ -12,4 +13,5 @@ public class Meme {
         this.topText    = topText;
         this.bottomText = bottomText;
     }
+
 }

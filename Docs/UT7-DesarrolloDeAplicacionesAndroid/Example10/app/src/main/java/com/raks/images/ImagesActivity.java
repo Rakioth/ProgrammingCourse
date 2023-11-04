@@ -23,6 +23,7 @@ public class ImagesActivity extends AppCompatActivity {
         scaleTypes.add(ImageView.ScaleType.FIT_END);
         scaleTypes.add(ImageView.ScaleType.FIT_START);
         scaleTypes.add(ImageView.ScaleType.FIT_XY);
+
         Spinner                           spinner = findViewById(R.id.spinner);
         ArrayAdapter<ImageView.ScaleType> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, scaleTypes);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -46,4 +47,5 @@ public class ImagesActivity extends AppCompatActivity {
             imageView.setAdjustViewBounds(isChecked);
         });
     }
+
 }

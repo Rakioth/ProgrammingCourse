@@ -1,4 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Example 09</string>
-    <string name="more">more</string>
+    <string name="more">More</string>
 </resources>

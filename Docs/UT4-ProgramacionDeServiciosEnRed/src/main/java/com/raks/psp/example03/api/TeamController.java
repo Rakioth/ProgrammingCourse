@@ -11,10 +11,11 @@ import java.util.Optional;
 
 @RestController
 public class TeamController {
+
     private final TeamRepository _teamRepository;
 
     @Autowired
-    TeamController(TeamRepository teamRepository) {
+    public TeamController(TeamRepository teamRepository) {
         _teamRepository = teamRepository;
     }
 
@@ -31,7 +32,7 @@ public class TeamController {
     }
 
     @DeleteMapping("/teams/{id}")
-    public ResponseEntity<Team> deleteTeam(@PathVariable("id") int id) {
+    public ResponseEntity<Team> deleteTeam(@PathVariable("id") Integer id) {
         Optional<Team> team = _teamRepository.findById(id);
         if (team.isEmpty())
             return ResponseEntity.notFound().build();
@@ -39,4 +40,5 @@ public class TeamController {
         _teamRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
 }

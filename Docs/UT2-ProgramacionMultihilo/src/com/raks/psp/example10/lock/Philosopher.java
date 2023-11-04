@@ -1,6 +1,7 @@
 package com.raks.psp.example10.lock;
 
 public class Philosopher extends Thread {
+
     private final int  _num;
     private final Fork _leftFork;
     private final Fork _rightFork;
@@ -40,4 +41,5 @@ public class Philosopher extends Thread {
                 break;
             }
     }
+
 }

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Example 12</string>
     <string name="preference_set_one_key">com.raks.preferences.PREFERENCE_SET_ONE_KEY</string>
@@ -9,6 +10,6 @@
     <string name="global_pref">GLOBAL_PREF</string>
     <string name="named_pref">NAMED_PREF</string>
     <string name="activity_pref">ACTIVITY_PREF</string>
-    <string name="previous">previous</string>
-    <string name="next">next</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>

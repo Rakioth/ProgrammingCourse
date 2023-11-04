@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatServer {
+
     private static final int MAX_PORT_NUMBER = 65535;
     private static final int MIN_PORT_NUMBER = 1;
 
@@ -50,6 +51,7 @@ public class ChatServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         int portNumber = 0;
+
         try {
             portNumber = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
@@ -65,4 +67,5 @@ public class ChatServer {
         ChatServer chatServer = new ChatServer(portNumber);
         chatServer.start();
     }
+
 }

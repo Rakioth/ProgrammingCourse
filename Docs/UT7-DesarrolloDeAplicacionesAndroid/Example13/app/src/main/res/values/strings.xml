@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Example 13</string>
-    <string name="add">add</string>
-    <string name="edit_student">edit student</string>
-    <string name="delete_student">delete student</string>
+    <string name="add">Add</string>
+    <string name="edit_student">Edit student</string>
+    <string name="delete_student">Delete student</string>
     <string name="name">Name</string>
     <string name="first_surname">First Surname</string>
     <string name="second_surname">Second Surname</string>

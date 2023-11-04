@@ -20,11 +20,12 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
 public class AesFileEncryptionTests {
+
     private final Path inputFile;
     private final Path encryptedFile;
     private final Path decryptedFile;
 
-    AesFileEncryptionTests() throws IOException, URISyntaxException {
+    public AesFileEncryptionTests() throws IOException, URISyntaxException {
         String resourceName = "The Dunwhich horror by H.P Lovecraft";
         inputFile     = Paths.get(getClass().getClassLoader().getResource(resourceName).toURI());
         encryptedFile = Files.createTempFile(resourceName, ".encrypted");
@@ -40,11 +41,7 @@ public class AesFileEncryptionTests {
     }
 
     @Test
-    void givenFile_whenEncrypt_thenSuccess()
-    throws NoSuchAlgorithmException, IllegalBlockSizeException,
-           InvalidKeyException, BadPaddingException, InvalidAlgorithmParameterException,
-           NoSuchPaddingException, IOException {
-
+    void givenFile_whenEncrypt_thenSuccess() throws NoSuchAlgorithmException, IllegalBlockSizeException, InvalidKeyException, BadPaddingException, InvalidAlgorithmParameterException, NoSuchPaddingException, IOException {
         SecretKey       key             = AesEncryption.generateKey(128);
         String          algorithm       = "AES/CBC/PKCS5Padding";
         IvParameterSpec ivParameterSpec = AesEncryption.generateIV();

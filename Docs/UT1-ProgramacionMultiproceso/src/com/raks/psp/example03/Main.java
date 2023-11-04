@@ -4,10 +4,11 @@ import java.io.*;
 import java.nio.file.Path;
 
 public class Main {
+
     public static void main(String[] args) throws IOException, InterruptedException {
-        var classPath = Path.of(System.getProperty("user.dir"), "out", "production", "UT1-ProgramacionMultiproceso").toString();
-        var process1  = new ProcessBuilder("java", "-cp", classPath, Adder.class.getName(), "1000", "2000").start();
-        var process2  = new ProcessBuilder("java", "-cp", classPath, Adder.class.getName(), "2000", "3000").start();
+        String  classPath = Path.of(System.getProperty("user.dir"), "out", "production", "UT1-ProgramacionMultiproceso").toString();
+        Process process1  = new ProcessBuilder("java", "-cp", classPath, Adder.class.getName(), "1000", "2000").start();
+        Process process2  = new ProcessBuilder("java", "-cp", classPath, Adder.class.getName(), "2000", "3000").start();
 
         process1.waitFor();
         process2.waitFor();
@@ -19,5 +20,5 @@ public class Main {
             System.out.printf("The output of process 2 is: %s%n", br.readLine());
         }
     }
-}
 
+}

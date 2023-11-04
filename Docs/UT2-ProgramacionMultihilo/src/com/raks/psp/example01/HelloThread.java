@@ -1,10 +1,11 @@
 package com.raks.psp.example01;
 
 public class HelloThread extends Thread {
+
     public static void main(String[] args) throws InterruptedException {
-        var helloThread1 = new HelloThread();
+        Thread helloThread1 = new HelloThread();
         helloThread1.start();
-        var helloThread2 = new HelloThread();
+        Thread helloThread2 = new HelloThread();
         helloThread2.start();
     }
 
@@ -19,4 +20,5 @@ public class HelloThread extends Thread {
             }
         }
     }
+
 }

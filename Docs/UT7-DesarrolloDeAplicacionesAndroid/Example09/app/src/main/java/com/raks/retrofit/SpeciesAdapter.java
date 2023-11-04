@@ -21,7 +21,6 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesViewHolder> {
     private final OnSpeciesClickListener _onSpeciesClickListener;
 
     public SpeciesAdapter(List<Species> speciesList, OnSpeciesClickListener onSpeciesClickListener) {
-
         _speciesList            = speciesList;
         _onSpeciesClickListener = onSpeciesClickListener;
     }
@@ -29,7 +28,7 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesViewHolder> {
     @NonNull
     @Override
     public SpeciesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View              view              = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_species_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_species_item, parent, false);
         return new SpeciesViewHolder(view, _onSpeciesClickListener);
     }
 
@@ -42,4 +41,5 @@ public class SpeciesAdapter extends RecyclerView.Adapter<SpeciesViewHolder> {
     public int getItemCount() {
         return _speciesList.size();
     }
+
 }

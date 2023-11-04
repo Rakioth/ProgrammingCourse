@@ -12,6 +12,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 public class SecurityConfiguration {
+
     private final JwtRequestFilter _jwtRequestFilter;
 
     public SecurityConfiguration(JwtRequestFilter jwtRequestFilter) {
@@ -36,4 +37,5 @@ public class SecurityConfiguration {
             .anyRequest().authenticated();
         return http.build();
     }
+
 }

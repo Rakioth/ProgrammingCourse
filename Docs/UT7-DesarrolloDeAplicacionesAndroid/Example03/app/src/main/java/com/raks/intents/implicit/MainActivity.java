@@ -8,19 +8,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String GEO_0_0_Q_S = "geo:0,0?q=%s";
+
+    private static final String GEO_0_0_Q_S = "geo:0,0?q=%s";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText input = findViewById(R.id.address);
+        final EditText input = findViewById(R.id.address);
+
         input.setOnEditorActionListener((textView, i, keyEvent) -> {
             if (i == EditorInfo.IME_ACTION_DONE) {
                 String address   = Uri.encode(textView.getText().toString());
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW);
                 Uri    uri       = Uri.parse(String.format(GEO_0_0_Q_S, address));
+
                 mapIntent.setData(uri);
                 startActivity(mapIntent);
                 return true;
@@ -28,4 +31,5 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
     }
+
 }

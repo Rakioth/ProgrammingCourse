@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DiningPhilosophers {
+
     private static final int NUM_FORKS = 5;
 
     private final List<Philosopher> _philosophers;
@@ -33,4 +34,5 @@ public class DiningPhilosophers {
         right.available = true;
         notifyAll();
     }
+
 }

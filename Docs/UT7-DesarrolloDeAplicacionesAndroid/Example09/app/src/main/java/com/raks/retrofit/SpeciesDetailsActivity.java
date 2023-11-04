@@ -20,6 +20,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SpeciesDetailsActivity extends AppCompatActivity {
+
     private static final String TAG      = SpeciesDetailsActivity.class.getName();
     public final static  String NAME_KEY = "NAME";
 
@@ -63,4 +64,5 @@ public class SpeciesDetailsActivity extends AppCompatActivity {
             }
         });
     }
+
 }

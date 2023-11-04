@@ -1,6 +1,7 @@
 package com.raks.psp.example10.starvation;
 
 public class Philosopher extends Thread {
+
     private final DiningPhilosophers _diningPhilosophers;
     private final int                _num;
     private final Fork               _leftFork;
@@ -39,4 +40,5 @@ public class Philosopher extends Thread {
             }
         System.out.printf("Philosopher %d all done%n", _num);
     }
+
 }

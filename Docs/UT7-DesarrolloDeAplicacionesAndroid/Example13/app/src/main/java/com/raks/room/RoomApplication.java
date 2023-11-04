@@ -4,6 +4,7 @@ import android.app.Application;
 import com.raks.room.db.AppDatabase;
 
 public class RoomApplication extends Application {
+
     public AppDatabase appDatabase;
 
     @Override
@@ -11,4 +12,5 @@ public class RoomApplication extends Application {
         super.onCreate();
         appDatabase = AppDatabase.getInstance(this);
     }
+
 }

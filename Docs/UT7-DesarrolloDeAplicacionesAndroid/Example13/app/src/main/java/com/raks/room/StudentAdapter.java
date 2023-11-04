@@ -10,14 +10,14 @@ import com.raks.room.db.Student;
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentViewHolder> {
-    private final List<Student>        _students;
-    private final StudentClickListener _studentClickListener;
 
     public interface StudentClickListener {
         void onStudentEdit(int position);
-
         void onStudentDelete(int position);
     }
+
+    private final List<Student>        _students;
+    private final StudentClickListener _studentClickListener;
 
     public StudentAdapter(List<Student> students, StudentClickListener studentClickListener) {
         _students             = students;
@@ -39,4 +39,5 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentViewHolder> {
     public int getItemCount() {
         return _students.size();
     }
+
 }

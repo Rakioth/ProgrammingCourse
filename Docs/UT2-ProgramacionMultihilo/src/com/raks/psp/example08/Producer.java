@@ -1,9 +1,10 @@
 package com.raks.psp.example08;
 
 public class Producer extends Thread {
+
     private final Container _container;
 
-    Producer(Container container) {
+    public Producer(Container container) {
         _container = container;
     }
 
@@ -13,10 +14,11 @@ public class Producer extends Thread {
             _container.put(i);
             System.out.printf("Producer: container.put(%d)%n", i);
             try {
-                Thread.sleep((int) Math.random() * 100);
+                Thread.sleep((int) (Math.random() * 100));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
     }
+
 }

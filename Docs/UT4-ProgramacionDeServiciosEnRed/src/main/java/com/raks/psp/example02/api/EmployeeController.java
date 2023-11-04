@@ -11,10 +11,11 @@ import java.util.Optional;
 
 @RestController
 public class EmployeeController {
+
     private final EmployeeRepository _employeeRepository;
 
     @Autowired
-    EmployeeController(EmployeeRepository employeeRepository) {
+    public EmployeeController(EmployeeRepository employeeRepository) {
         _employeeRepository = employeeRepository;
     }
 
@@ -59,4 +60,5 @@ public class EmployeeController {
         _employeeRepository.deleteById(employee.get().getNumber());
         return ResponseEntity.noContent().build();
     }
+
 }

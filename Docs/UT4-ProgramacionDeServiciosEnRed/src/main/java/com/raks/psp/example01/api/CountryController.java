@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class CountryController {
+
     private final CountryRepository _countryRepository;
 
     @Autowired
-    CountryController(CountryRepository countryRepository) {
+    public CountryController(CountryRepository countryRepository) {
         _countryRepository = countryRepository;
     }
 
@@ -31,4 +32,5 @@ public class CountryController {
         return ResponseEntity.status(HttpStatus.CREATED)
                              .body(_countryRepository.save(country));
     }
+
 }

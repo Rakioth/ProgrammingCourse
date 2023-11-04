@@ -1,10 +1,11 @@
 package com.raks.psp.example01;
 
 public class HelloRunnable implements Runnable {
+
     public static void main(String[] args) throws InterruptedException {
-        var helloThread1 = new Thread(new HelloRunnable());
+        Thread helloThread1 = new Thread(new HelloRunnable());
         helloThread1.start();
-        var helloThread2 = new Thread(new HelloRunnable());
+        Thread helloThread2 = new Thread(new HelloRunnable());
         helloThread2.start();
     }
 
@@ -19,4 +20,5 @@ public class HelloRunnable implements Runnable {
             }
         }
     }
+
 }

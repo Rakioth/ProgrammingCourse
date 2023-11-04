@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
+
     private final UserRepository  _userRepository;
     private final PasswordEncoder _passwordEncoder;
     private final JwtService      _jwtService;
@@ -23,7 +24,7 @@ public class UserController {
         _jwtService      = jwtService;
     }
 
-    @PostMapping("user")
+    @PostMapping("/user")
     public ResponseEntity<String> authenticate(@RequestBody AuthenticationRequest body) {
         User user = _userRepository.findByUsername(body.username);
         if (user == null)
@@ -34,4 +35,5 @@ public class UserController {
 
         return ResponseEntity.ok(_jwtService.createJwt(user));
     }
+
 }

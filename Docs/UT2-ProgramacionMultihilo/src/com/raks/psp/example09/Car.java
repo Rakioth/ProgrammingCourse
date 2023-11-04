@@ -1,6 +1,7 @@
 package com.raks.psp.example09;
 
 public class Car extends Thread {
+
     private final String  _name;
     private final Parking _parking;
 
@@ -27,4 +28,5 @@ public class Car extends Thread {
     public String toString() {
         return _name;
     }
+
 }

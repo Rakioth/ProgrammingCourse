@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="2-Client" type="Application" factoryName="Application" singleton="false">
-    <option name="MAIN_CLASS_NAME" value="com.danielmunoz.psp.sockets.Client" />
-    <module name="Ejercicio-3" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

@@ -8,6 +8,7 @@ import java.util.*;
 
 @Repository
 public class CountryRepository {
+
     private final Map<String, Country> countries = new HashMap<>();
 
     @PostConstruct
@@ -19,6 +20,7 @@ public class CountryRepository {
         spain.setCurrency(Currency.getInstance("EUR").getDisplayName());
         spain.setPopulation(47_326_687);
         countries.put(spain.getCode(), spain);
+
         Country portugal = new Country();
         portugal.setCode("pt");
         portugal.setName("Portugal");
@@ -26,6 +28,7 @@ public class CountryRepository {
         portugal.setCurrency(Currency.getInstance("EUR").getDisplayName());
         portugal.setPopulation(10_298_252);
         countries.put(portugal.getCode(), portugal);
+
         Country peru = new Country();
         peru.setCode("pe");
         peru.setName("Perú");
@@ -49,4 +52,5 @@ public class CountryRepository {
         countries.putIfAbsent(country.getCode(), country);
         return country;
     }
+
 }

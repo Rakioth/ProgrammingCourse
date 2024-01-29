@@ -1,1 +1,0 @@
-rootProject.name = "UT4-ProgramacionDeServiciosEnRed"

@@ -1,1 +1,0 @@
-rootProject.name = "P7-ClienteRest"

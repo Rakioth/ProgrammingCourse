@@ -1,0 +1,1 @@
+rootProject.name = "P7-RESTClient"

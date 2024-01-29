@@ -1,5 +1,5 @@
 <h1 align="center">
-  <🎵> Music Rest API
+  <<img src="https://github.com/Rakioth/ProgrammingCourse/assets/75569411/bd67d3ce-2a3a-45f7-92b3-fd9911058514" alt="Musical Note" width="33"/>> Music Rest API
 </h1>
 
 <img src="docs/imgs/logo-swagger.png" alt="Swagger Logo" align="left" width="192"/>
@@ -14,6 +14,6 @@ You can explore and test the API using the interactive [Swagger UI](http://local
 
 <br/>
 
-## 🪄 Swagger UI
+## <img src="https://github.com/Rakioth/ProgrammingCourse/assets/75569411/a3cbac5a-a93c-4f4d-89c1-64ef0fd3ed47" alt="Magic Wand" width="25"/> Swagger UI
 
 ![Swagger Screen](docs/imgs/screen-swagger.png)

@@ -1,0 +1,284 @@
+{
+    "error": {
+        "username": {
+            "available": "Nombre de usuario no disponible",
+            "check": "Nombre de usuario incorrecto",
+            "pattern": "El nombre de usuario debe contener solo letras y números",
+            "block": "Esta cuenta está bloqueada durante {minutes} minutos",
+            "removed": "Esta cuenta solicitó ser eliminada"
+        },
+        "email": {
+            "available": "Correo electrónico no disponible",
+            "check": "Correo electrónico incorrecto",
+            "pattern": "El Correo electrónico debe tener el siguiente formato: usuario{'@'}servidor.extension"
+        },
+        "password": {
+            "check": "Contraseña incorrecta",
+            "match": "Las contraseñas no coinciden",
+            "pattern": "La contraseña debe contener al menos un dígito, una letra minúscula, una letra mayúscula y uno de los siguientes caracteres de puntuación/exclamación: !, #, $, %, &",
+            "size": "La contraseña debe tener entre 6 y 12 caracteres"
+        },
+        "code": {
+            "check": "Código incorrecto",
+            "expired": "Código expirado"
+        },
+        "phone-number": {
+            "pattern": "El número de teléfono debe contener 9 dígitos (puedes incluir '-' y ' ' entre cada número)"
+        },
+        "addr-floor": {
+            "pattern": "El piso de la dirección debe ser un número"
+        },
+        "card-number": {
+            "pattern": "El número de tarjeta debe ser un número"
+        },
+        "card-ccv": {
+            "pattern": "El CCV de la tarjeta debe ser un número"
+        },
+        "birthdate": {
+            "check": "Debe ser mayor de 18 años"
+        },
+        "license": {
+            "check": "Debe aceptar la licencia"
+        },
+        "card-type": {
+            "check": "Tipo inválido"
+        },
+        "country-type": {
+            "check": "Tipo inválido"
+        },
+        "document-type": {
+            "check": "Tipo inválido"
+        },
+        "gender": {
+            "check": "Tipo inválido"
+        },
+        "via-type": {
+            "check": "Tipo inválido"
+        },
+        "document": {
+            "dni": "No coincide con el patrón de DNI (12345678A)",
+            "nie": "No coincide con el patrón de NIE (X1234567A)",
+            "passport": "No coincide con el patrón de pasaporte (AB123456)",
+            "social": "No coincide con el patrón de número de seguridad social (123456789)",
+            "check": "Tipo inválido"
+        },
+        "general": {
+            "blank": "Campo obligatorio"
+        }
+    },
+    "theme": {
+        "stripes": "Tema Stripes",
+        "monochrome": "Tema Monochrome"
+    },
+    "locale": {
+        "usa": "Bandera de USA",
+        "spain": "Bandera de España"
+    },
+    "label": {
+        "logo": "Logo Swiftly",
+        "email": "Correo electrónico",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "password-confirm": "Confirmar contraseña",
+        "filter": "Filtrar",
+        "total-price": "Precio Total",
+        "model": "Modelo",
+        "min-price": "Precio Mínimo",
+        "max-price": "Precio Máximo",
+        "on-sale": "En Oferta",
+        "is-new": "Nuevo",
+        "categories": "Categorías",
+        "start-date": "Fecha de Inicio",
+        "end-date": "Fecha de Fin",
+        "order-state": "Estado del Pedido",
+        "option": "Elegir una Opción",
+        "option-category": "Seleccionar una Categoría",
+        "option-state": "Seleccionar Estado del Pedido",
+        "account": "Elegir una Cuenta",
+        "button": "Continuar",
+        "clear-cart": "Vaciar Carrito",
+        "buy-cart": "Comprar Carrito",
+        "table": {
+            "model": "MODELO",
+            "price": "PRECIO",
+            "units": "UNIDADES",
+            "remove": "ELIMINAR",
+            "order-date": "FECHA DE PEDIDO",
+            "order-state": "ESTADO DEL PEDIDO",
+            "total-price": "PRECIO TOTAL"
+        },
+        "list": {
+            "products": "Productos",
+            "orders": "Pedidos",
+            "profile": "Perfil",
+            "cart": "Carrito",
+            "sign-in": "Iniciar Sesión",
+            "log-out": "Cerrar Sesión"
+        },
+        "footer": {
+            "company": "Compañía Swiftly",
+            "rights": ", Todos los Derechos Reservados",
+            "top": "Volver Arriba",
+            "terms": "Términos de Uso",
+            "privacy": "Privacidad"
+        }
+    },
+    "store-page": {
+        "this-is": "Esta es la tienda {name}"
+    },
+    "profile-page": {
+        "client-type": "Tipo de Cliente",
+        "address": "Dirección",
+        "username": "Usuario",
+        "email": "Email",
+        "gender": "Género",
+        "birthdate": "Fecha de Nacimiento",
+        "country": "País",
+        "phone-number": "Número de Teléfono",
+        "remove-confirm": "¿Estás seguro/a de que quieres eliminar tu cuenta?",
+        "remove-button": "Eliminar Cuenta"
+    },
+    "register-page": {
+        "title": "Registrarse en Swiftly",
+        "step": "PASO {start} DE {finish}",
+        "register": {
+            "header": "Crea tu cuenta de Swiftly"
+        },
+        "verify": {
+            "header": "Verifica tu dirección de correo electrónico",
+            "sent-code": "Código Enviado",
+            "hint": "Ingresa tu código de 4 dígitos",
+            "resend": "Reenviar correo electrónico"
+        },
+        "auth": {
+            "header": "Crear tu cuenta"
+        }
+    },
+    "login-page": {
+        "title": "Inicio de Sesión en Swiftly",
+        "login": {
+            "header": "Inicia sesión en tu cuenta",
+            "hint-dont-have": "¿No tienes una cuenta?",
+            "hint-sign-up": "Regístrate"
+        },
+        "forgot": {
+            "header": "Restablece tu contraseña",
+            "hint": "Ingresa la dirección de correo electrónico asociada con tu cuenta y te enviaremos un enlace para restablecer tu contraseña.",
+            "return": "Volver al inicio de sesión",
+            "commit-header": "¡Gracias! Si la dirección de correo electrónico que ingresaste coincide con una que tenemos registrada, te hemos enviado un correo electrónico con más instrucciones para restablecer tu contraseña.",
+            "commit-hint": "Si no has recibido un correo electrónico en 5 minutos, revisa tu carpeta de spam,",
+            "commit-resend": "reenviar",
+            "commit-different": "intentar con un correo electrónico diferente"
+        },
+        "auth": {
+            "header": "Bienvenido/a {username}",
+            "hint-forgot": "¿Olvidaste tu contraseña?",
+            "hint-stay": "Mantener la sesión iniciada durante una semana"
+        }
+    },
+    "reset-page": {
+        "title": "Restablecer Contraseña en Swiftly",
+        "header": "Restablece tu contraseña",
+        "new-pass": "Nueva contraseña",
+        "confirm-pass": "Confirmar contraseña"
+    },
+    "client-page": {
+        "confirm": "Para realizar compras en la tienda, necesitas convertirte en cliente",
+        "header-other": "Otra Información",
+        "header-data": "Datos del Cliente",
+        "header-details": "Detalles de Contacto",
+        "go-back": "Volver",
+        "go-next": "Siguiente",
+        "send": "Enviar",
+        "label": {
+            "name": "Nombre",
+            "surnames": "Apellidos",
+            "gender": "Género",
+            "birthdate": "Fecha de Nacimiento",
+            "document-type": "Tipo de Documento",
+            "document": "Documento",
+            "country": "País",
+            "phone-number": "Número de Teléfono",
+            "address": "Dirección",
+            "number": "Número",
+            "portal": "Portal",
+            "floor": "Piso",
+            "locality": "Localidad",
+            "region": "Región",
+            "address-name": "Nombre de la Dirección",
+            "postal-code": "Código Postal",
+            "credit-card": "Tarjeta de Crédito",
+            "card-number": "Número",
+            "card-ccv": "CCV",
+            "expired-date": "Fecha de Vencimiento",
+            "comments": "Comentarios",
+            "license": "Aceptar Licencia"
+        }
+    },
+    "address": "{via} {name} {number}, Piso {floor}{portal} • {postalCode} {locality}, {region}",
+    "coords": "{degrees}°{minutes}'{seconds}\"{cardinal}",
+    "product": {
+        "price": "{price}€",
+        "new": "NUEVO"
+    },
+    "swiftly": {
+        "via": {
+            "avenue": "Avenida",
+            "plaza": "Plaza",
+            "roundabout": "Glorieta",
+            "street": "Calle",
+            "walkway": "Pasaje"
+        },
+        "document": {
+            "cif": "CIF",
+            "dni": "DNI",
+            "nie": "NIE",
+            "passport": "Pasaporte",
+            "social": "Número de Seguridad Social"
+        },
+        "card": {
+            "american": "American Express",
+            "mastercard": "Mastercard",
+            "visa": "VISA"
+        },
+        "gender": {
+            "female": "Femenino",
+            "male": "Masculino",
+            "non-binary": "No Binario",
+            "other": "Otro"
+        },
+        "order": {
+            "completed": "Completado",
+            "lost": "Perdido",
+            "preparing": "En Preparación",
+            "transit": "En Tránsito"
+        },
+        "client": {
+            "bronze": "Bronce",
+            "gold": "Oro",
+            "platinum": "Platino",
+            "silver": "Plata"
+        },
+        "country": {
+            "en": "EE.UU.",
+            "es": "España"
+        }
+    },
+    "confirm": {
+        "add-item": "¿Estás seguro de que quieres añadir este artículo?",
+        "remove-item": "¿Estás seguro de que quieres eliminar este artículo?",
+        "clear-cart": "¿Estás seguro de que quieres vaciar tu carrito?",
+        "buy-cart": "¿Estás seguro de que quieres comprar tu carrito?"
+    },
+    "not-found": "Página No Encontrada",
+    "electronics": "Electrónica",
+    "clothes": "Ropa",
+    "COMPLETED": "Completado",
+    "LOST": "Perdido",
+    "BEING_PREPARED": "En Preparación",
+    "IN_TRANSIT": "En Tránsito",
+    "FEMALE": "Femenino",
+    "MALE": "Masculino",
+    "NON_BINARY": "No Binario",
+    "OTHER": "Otro"
+}

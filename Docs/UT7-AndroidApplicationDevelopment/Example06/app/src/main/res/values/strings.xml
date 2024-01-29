@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Example 06</string>
+    <string name="write_smz">Write something</string>
+    <string name="times_called">Times Called %d</string>
+</resources>

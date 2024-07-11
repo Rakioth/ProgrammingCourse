@@ -22,17 +22,17 @@ The admin dashboard is available on `port 8000`, and the shop is on `port 8080`.
 
 ## <img src="https://github.com/Rakioth/ProgrammingCourse/assets/75569411/47b79a3e-bca4-44e3-b23c-145e3bf4c225" alt="Toolbox" width="25"/> Features
 
-* **Session Management** - Efficient session management for user authentication and authorization.
-* **Cookies** - Utilizes cookies for maintaining user session and tracking user data.
-* **JSON Web Tokens** - Implements JWT for secure user authentication and authorization.
-* **Spring Boot** - Powers the backend with Spring Boot, ensuring robust, efficient, and secure application development.
+- **Session Management** - Efficient session management for user authentication and authorization.
+- **Cookies** - Utilizes cookies for maintaining user session and tracking user data.
+- **JSON Web Tokens** - Implements JWT for secure user authentication and authorization.
+- **Spring Boot** - Powers the backend with Spring Boot, ensuring robust, efficient, and secure application development.
   - **Security** - Integrates Spring Security to safeguard your application against unauthorized access.
   - **Thymeleaf** - Utilizes Spring Thymeleaf for the admin dashboard, providing a dynamic and interactive UI.
   - **Java Persistence API** - Incorporates Spring JPA for easy interaction with the database.
   - **Web** - Utilized for both web application development and API creation, enabling seamless interaction between the frontend Vue.js application and the backend services.
   - **Validation** - Implements Spring Validation for data validation and error handling.
   - **Email** - Enables email confirmation when creating user accounts for enhanced security and verification.
-* **Vue.js** - Employs Vue.js for the frontend, delivering a dynamic and responsive user experience.
+- **Vue.js** - Employs Vue.js for the frontend, delivering a dynamic and responsive user experience.
   - **Pinia** - Utilizes Pinia for state management in the store, ensuring efficient data handling.
   - **Axios** - Employs Axios for making HTTP requests to interact with the Spring API.
   - **i18n** - Includes internationalization support for Vue.js, allowing for multi-language support.

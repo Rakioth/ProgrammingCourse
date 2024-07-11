@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="">
+<div th:replace="~{fragments/head
+        :: head('swiftly.title.dashboard-user.detail')}"/>
+<body>
+<canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
+<div id="app">
+
+    <div th:replace="~{fragments/settings :: settings}"/>
+
+    <div class="glass-effect go-back">
+        <svg viewBox="0 0 448 512">
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+    </div>
+
+    <div class="glass-effect" id="dashboard" th:object="${userResponse}">
+        <h2 class="dashboard-title">
+            <th:block th:text="#{swiftly.title.dashboard-user.detail}"/>
+            📝
+        </h2>
+
+        <div class="consult">
+            <h3 th:text="#{swiftly.dashboard.user-name(*{username})}"/>
+            <form class="grid-wrapper grid-category" th:action="@{'/admin/dashboard/users/' + *{id}}" method="post">
+
+                <div class="glass-input">
+                    <label for="releaseBlock" th:text="#{swiftly.dashboard.label.release-block}"/>
+                    <input type="datetime-local" id="releaseBlock" name="releaseBlock"
+                           th:value="*{#temporals.format(releaseBlock, 'yyyy-MM-dd HH:mm')}">
+                    <ul th:unless="${#lists.isEmpty(userError)}" class="errors">
+                        <li th:each="error : ${userError}" th:text="${error.defaultMessage}"/>
+                    </ul>
+                </div>
+
+                <button type="submit" th:text="#{swiftly.dashboard.block-user}"/>
+
+                <button id="unblock-user" type="button" th:text="#{swiftly.dashboard.unblock-user}"/>
+
+                <div></div>
+
+                <button id="delete-user" type="button" th:text="#{swiftly.dashboard.delete-user}"/>
+
+                <button id="recover-user" type="button" th:text="#{swiftly.dashboard.recover-user}"/>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    document.querySelector('#unblock-user')
+            .addEventListener('click', function () {
+                const currentUrl = window.location.href
+                const userId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+
+                fetch(`http://localhost:8000/api/v1/users/unblock/${ userId }`, {
+                    method: "PUT"
+                })
+                    .finally(() => window.location.reload())
+            })
+
+    document.querySelector('#delete-user')
+            .addEventListener('click', function () {
+                const currentUrl = window.location.href
+                const userId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+
+                fetch(`http://localhost:8000/api/v1/users/destroy/${ userId }`, {
+                    method: "PUT"
+                })
+                    .finally(() => window.location.reload())
+            })
+
+    document.querySelector('#recover-user')
+            .addEventListener('click', function () {
+                const currentUrl = window.location.href
+                const userId = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+
+                fetch(`http://localhost:8000/api/v1/users/recover/${ userId }`, {
+                    method: "PUT"
+                })
+                    .finally(() => window.location.reload())
+            })
+
+</script>
+</html>

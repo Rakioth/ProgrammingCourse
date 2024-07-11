@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="">
+<div th:replace="~{fragments/head
+        :: head('swiftly.title.dashboard-client')}"/>
+<body>
+<canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
+<div id="app">
+
+    <div th:replace="~{fragments/settings :: settings}"/>
+
+    <div class="glass-effect go-back">
+        <svg viewBox="0 0 448 512">
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+    </div>
+
+    <div class="glass-effect" id="dashboard">
+
+        <h2 class="dashboard-title">
+            <th:block th:text="#{swiftly.title.dashboard-client}"/>
+            🤝
+        </h2>
+
+        <form class="consult" action="/admin/dashboard/clients" method="post" th:object="${clientsRequest}">
+            <h3 th:text="#{swiftly.dashboard.parameter}"/>
+            <div class="grid-wrapper">
+
+                <div class="glass-input">
+                    <label for="surname" th:text="#{swiftly.dashboard.label.surname}"/>
+                    <input type="text" th:field="*{surname}">
+                </div>
+
+                <div class="glass-input">
+                    <label for="clientType" th:text="#{swiftly.dashboard.label.client-type}"/>
+                    <select class="glass-select" th:field="*{type}">
+                        <option selected value="" th:text="#{swiftly.dashboard.choose-option}"/>
+                        <option th:each="clientTypes : ${listClientTypes}"
+                                th:value="${clientTypes.code}"
+                                th:text="#{__${clientTypes.ref}__}"/>
+                    </select>
+                </div>
+
+                <div class="glass-input">
+                    <label for="gender" th:text="#{swiftly.dashboard.label.gender}"/>
+                    <select class="glass-select" th:field="*{gender}">
+                        <option selected value="" th:text="#{swiftly.dashboard.choose-option}"/>
+                        <option th:each="genderty : ${T(com.raks.swiftly.domain.model.enums.Gender).values()}"
+                                th:value="${genderty.name()}"
+                                th:text="#{__${genderty.getRef()}__}"/>
+                    </select>
+                </div>
+
+                <div></div>
+
+                <div class="glass-input">
+                    <label for="startBirthdate" th:text="#{swiftly.dashboard.label.start-birthdate}"/>
+                    <input type="date" id="startBirthdate" name="startBirthdate" th:value="*{#temporals.format(startBirthdate, 'yyyy-MM-dd')}">
+                </div>
+
+                <div class="glass-input">
+                    <label for="endBirthdate" th:text="#{swiftly.dashboard.label.end-birthdate}"/>
+                    <input type="date" id="endBirthdate" name="endBirthdate" th:value="*{#temporals.format(endBirthdate, 'yyyy-MM-dd')}">
+                </div>
+
+                <div class="glass-input">
+                    <label for="startExpenses" th:text="#{swiftly.dashboard.label.start-expenses}"/>
+                    <input type="number" step="any" th:field="*{startExpenses}">
+                </div>
+
+                <div class="glass-input">
+                    <label for="endExpenses" th:text="#{swiftly.dashboard.label.end-expenses}"/>
+                    <input type="number" step="any" th:field="*{endExpenses}">
+                </div>
+
+            </div>
+
+            <button th:text="#{swiftly.dashboard.submit}" type="submit"/>
+
+        </form>
+
+        <div class="consult">
+            <h3 th:text="#{swiftly.dashboard.table}"/>
+            <table class="crud-table">
+                <thead>
+                <tr>
+                    <th th:text="#{swiftly.dashboard.table.id}"/>
+                    <th th:text="#{swiftly.dashboard.table.name}"/>
+                    <th th:text="#{swiftly.dashboard.table.surnames}"/>
+                    <th th:text="#{swiftly.dashboard.table.gender}"/>
+                    <th th:text="#{swiftly.dashboard.table.birthdate}"/>
+                    <th th:text="#{swiftly.dashboard.table.client-type}"/>
+                    <th th:text="#{swiftly.dashboard.table.accumulated-expenses}"/>
+                    <th th:text="#{swiftly.dashboard.table.phone-number}"/>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="client : ${clientsResponse}">
+                    <td th:text="${client.id}"/>
+                    <td th:text="${client.name}"/>
+                    <td th:text="${client.surnames}"/>
+                    <td th:text="#{__${client.gender.ref}__}"/>
+                    <td th:text="${client.birthdate}"/>
+                    <td th:text="#{__${client.type.ref}__}"/>
+                    <td th:text="${client.accumulatedExpenses}"/>
+                    <td th:text="${client.phoneNumber}"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

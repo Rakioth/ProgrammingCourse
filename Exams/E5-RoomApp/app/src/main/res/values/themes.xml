@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Notway" parent="Theme.Material3.DayNight">
+        <item name="colorPrimary">@color/text</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorSurface">@color/primary</item>
+        <item name="android:statusBarColor">@color/status</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="icon">@color/text</item>
+    </style>
+</resources>

@@ -1,0 +1,284 @@
+{
+    "error": {
+        "username": {
+            "available": "Username not available",
+            "check": "Incorrect username",
+            "pattern": "Username must contain only letters and numbers",
+            "block": "This account is blocked for {minutes} minutes",
+            "removed": "This account requested to be removed"
+        },
+        "email": {
+            "available": "Email not available",
+            "check": "Incorrect email",
+            "pattern": "Email must match this pattern user{'@'}server.extension"
+        },
+        "password": {
+            "check": "Incorrect password",
+            "match": "Password doesn't match",
+            "pattern": "Password must contain at least one digit, one lower case letter, one upper case letter and one of the following punctuation/exclamation characters: !, #, $, %, &",
+            "size": "Password must be between 6 and 12 characters long"
+        },
+        "code": {
+            "check": "Incorrect code",
+            "expired": "Expired code"
+        },
+        "phone-number": {
+            "pattern": "Phone number must contain 9 digits (You can have '-' and ' ' between each number)"
+        },
+        "addr-floor": {
+            "pattern": "Address floor must be a number"
+        },
+        "card-number": {
+            "pattern": "Card number must be a number"
+        },
+        "card-ccv": {
+            "pattern": "Card CCV must be a number"
+        },
+        "birthdate": {
+            "check": "Must be 18 or over"
+        },
+        "license": {
+            "check": "Must accept the license"
+        },
+        "card-type": {
+            "check": "Invalid Type"
+        },
+        "country-type": {
+            "check": "Invalid Type"
+        },
+        "document-type": {
+            "check": "Invalid Type"
+        },
+        "gender": {
+            "check": "Invalid Type"
+        },
+        "via-type": {
+            "check": "Invalid Type"
+        },
+        "document": {
+            "dni": "Doesn't match DNI pattern (12345678A)",
+            "nie": "Doesn't match NIE pattern (X1234567A)",
+            "passport": "Doesn't match Passport pattern (AB123456)",
+            "social": "Doesn't match Social Number pattern (123456789)",
+            "check": "Invalid Type"
+        },
+        "general": {
+            "blank": "Required field"
+        }
+    },
+    "theme": {
+        "stripes": "Stripes Theme",
+        "monochrome": "Monochrome Theme"
+    },
+    "locale": {
+        "usa": "USA Flag",
+        "spain": "Spain Flag"
+    },
+    "label": {
+        "logo": "Swiftly Logo",
+        "email": "Email",
+        "username": "Username",
+        "password": "Password",
+        "password-confirm": "Confirm password",
+        "filter": "Filter",
+        "total-price": "Total Price",
+        "model": "Model",
+        "min-price": "Min Price",
+        "max-price": "Max Price",
+        "on-sale": "On Sale",
+        "is-new": "Is New",
+        "categories": "Categories",
+        "start-date": "Start Date",
+        "end-date": "End Date",
+        "order-state": "Order State",
+        "option": "Choose an Option",
+        "option-state": "Select Order State",
+        "option-category": "Select a Category",
+        "account": "Choose an Account",
+        "button": "Continue",
+        "clear-cart": "Clear Cart",
+        "buy-cart": "Buy Cart",
+        "table": {
+            "model": "MODEL",
+            "price": "PRICE",
+            "units": "UNITS",
+            "remove": "REMOVE",
+            "order-date": "ORDER DATE",
+            "order-state": "ORDER STATE",
+            "total-price": "TOTAL PRICE"
+        },
+        "list": {
+            "products": "Products",
+            "orders": "Orders",
+            "profile": "Profile",
+            "cart": "Cart",
+            "sign-in": "Sign In",
+            "log-out": "Log Out"
+        },
+        "footer": {
+            "company": "Swiftly Company",
+            "rights": ", All Rights Reserved",
+            "top": "Back to Top",
+            "terms": "Terms of Use",
+            "privacy": "Privacy"
+        }
+    },
+    "store-page": {
+        "this-is": "This is store {name}"
+    },
+    "profile-page": {
+        "client-type": "Client Type",
+        "address": "Address",
+        "username": "Username",
+        "email": "Email",
+        "gender": "Gender",
+        "birthdate": "Birthdate",
+        "country": "Country",
+        "phone-number": "Phone Number",
+        "remove-confirm": "Are you sure you want to delete you're account?",
+        "remove-button": "Delete Account"
+    },
+    "register-page": {
+        "title": "Swiftly Register",
+        "step": "STEP {start} OF {finish}",
+        "register": {
+            "header": "Create your Swiftly account"
+        },
+        "verify": {
+            "header": "Verify your email address",
+            "sent-code": "Sent Code",
+            "hint": "Enter your 4-digit code",
+            "resend": "Resend email"
+        },
+        "auth": {
+            "header": "Create account"
+        }
+    },
+    "login-page": {
+        "title": "Swiftly Login",
+        "login": {
+            "header": "Sign in to your account",
+            "hint-dont-have": "Don't have an account?",
+            "hint-sign-up": "Sign up"
+        },
+        "forgot": {
+            "header": "Reset your password",
+            "hint": "Enter the email address associated with your account and we'll send you a link to reset your password.",
+            "return": "Return to sign in",
+            "commit-header": "Thanks! If the email you entered matches one we have on file, then we've sent you an email containing further instructions for resetting your password.",
+            "commit-hint": "If you haven't received an email in 5 minutes, check your spam,",
+            "commit-resend": "resend",
+            "commit-different": "try a different email"
+        },
+        "auth": {
+            "header": "Welcome {username}",
+            "hint-forgot": "Forgot your password?",
+            "hint-stay": "Stay signed in for a week"
+        }
+    },
+    "reset-page": {
+        "title": "Swiftly Reset Password",
+        "header": "Reset your password",
+        "new-pass": "New password",
+        "confirm-pass": "Confirm your password"
+    },
+    "client-page": {
+        "confirm": "To make purchases in the store you need to become a customer",
+        "header-other": "Other Info",
+        "header-data": "Client Data",
+        "header-details": "Contact Details",
+        "go-back": "Go Back",
+        "go-next": "Go Next",
+        "send": "Send",
+        "label": {
+            "name": "Name",
+            "surnames": "Surnames",
+            "gender": "Gender",
+            "birthdate": "Birthdate",
+            "document-type": "Document Type",
+            "document": "Document",
+            "country": "Country",
+            "phone-number": "Phone Number",
+            "address": "Address",
+            "number": "Number",
+            "portal": "Portal",
+            "floor": "Floor",
+            "locality": "Locality",
+            "region": "Region",
+            "address-name": "Address Name",
+            "postal-code": "Postal Code",
+            "credit-card": "Credit Card",
+            "card-number": "Number",
+            "card-ccv": "CCV",
+            "expired-date": "Expired Date",
+            "Comments": "Comments",
+            "license": "Accept License"
+        }
+    },
+    "address": "{via} {name} {number}, Floor {floor}{portal} • {postalCode} {locality}, {region}",
+    "coords": "{degrees}°{minutes}'{seconds}\"{cardinal}",
+    "product": {
+        "price": "${price}",
+        "new": "NEW"
+    },
+    "swiftly": {
+        "via": {
+            "avenue": "Avenue",
+            "plaza": "Plaza",
+            "roundabout": "Roundabout",
+            "street": "Street",
+            "walkway": "Walkway"
+        },
+        "document": {
+            "cif": "CIF",
+            "dni": "DNI",
+            "nie": "NIE",
+            "passport": "Passport",
+            "social": "Social Number"
+        },
+        "card": {
+            "american": "American Express",
+            "mastercard": "Mastercard",
+            "visa": "VISA"
+        },
+        "gender": {
+            "female": "Female",
+            "male": "Male",
+            "non-binary": "Non-Binary",
+            "other": "Other"
+        },
+        "order": {
+            "completed": "Completed",
+            "lost": "Lost",
+            "preparing": "Being Prepared",
+            "transit": "In Transit"
+        },
+        "client": {
+            "bronze": "Bronze",
+            "gold": "Gold",
+            "platinum": "Platinum",
+            "silver": "Silver"
+        },
+        "country": {
+            "en": "USA",
+            "es": "Spain"
+        }
+    },
+    "confirm": {
+        "add-item": "Are you sure you want to add this item?",
+        "remove-item": "Are you sure you want to remove this item?",
+        "clear-cart": "Are you sure you want to clear your cart?",
+        "buy-cart": "Are you sure you want to buy this cart?"
+    },
+    "not-found": "Page Not Found",
+    "electronics": "Electronics",
+    "clothes": "Clothes",
+    "COMPLETED": "Completed",
+    "LOST": "Lost",
+    "BEING_PREPARED": "Being Prepared",
+    "IN_TRANSIT": "In Transit",
+    "FEMALE": "Female",
+    "MALE": "Male",
+    "NON_BINARY": "Non-Binary",
+    "OTHER": "Other"
+}

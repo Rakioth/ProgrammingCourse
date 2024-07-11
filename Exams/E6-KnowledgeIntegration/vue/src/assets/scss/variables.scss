@@ -1,0 +1,41 @@
+$clr: (
+    stripes: (
+        blue: #0075FF,
+        green: #5EBB79,
+        white: #FFFFFF,
+        black: #000000,
+        inverse: #FFFFFF,
+        inversof: #000000,
+        transin: transparent,
+        glass: rgba(255, 255, 255, 0.35),
+        glass-focus: rgba(255, 255, 255, 0.7),
+        glass-hover: rgba(255, 255, 255, 0.45),
+        display: 'inline-block',
+    ),
+    monochrome: (
+        inverse: #000000,
+        inversof: #FFFFFF,
+        transin: #FFFFFF,
+        glass: #FFFFFF,
+        glass-focus: rgba(0, 0, 0, 0.7),
+        display: 'none',
+    ),
+);
+
+$fw: (
+    regular: 500,
+    bold: 700,
+    black: 800,
+);
+
+$fs: (
+    300: 1rem,
+    400: 1.125rem,
+    500: 1.25rem,
+    600: 1.5rem,
+    700: 1.75rem,
+    800: 2rem,
+    900: 5rem,
+);
+
+$font-family: 'Sohne', 'Helvetica Neue', 'Arial', sans-serif;

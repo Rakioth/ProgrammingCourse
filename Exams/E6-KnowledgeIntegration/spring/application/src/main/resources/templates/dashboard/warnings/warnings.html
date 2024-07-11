@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="">
+<div th:replace="~{fragments/head
+        :: head('swiftly.title.dashboard-warning')}"/>
+<body>
+<canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
+<div id="app">
+
+    <div th:replace="~{fragments/settings :: settings}"/>
+
+    <div class="glass-effect go-back">
+        <svg viewBox="0 0 448 512">
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
+        </svg>
+    </div>
+
+    <div class="glass-effect" id="dashboard">
+        <h2 class="dashboard-title">
+            <th:block th:text="#{swiftly.title.dashboard-warning}"/>
+            ⚠️
+        </h2>
+        <div class="consult">
+            <h3 th:text="#{swiftly.dashboard.table}"/>
+            <table class="crud-table">
+                <thead>
+                <tr>
+                    <th th:text="#{swiftly.dashboard.table.id}"/>
+                    <th th:text="#{swiftly.dashboard.label.description}"/>
+                    <th th:text="#{swiftly.dashboard.label.type}"/>
+                    <th th:text="#{swiftly.dashboard.label.process}"/>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="warning-row" th:each="warning : ${warningsResponse}"
+                    th:with="WarningType=${T(com.raks.swiftly.domain.model.enums.WarningType)}">
+                    <td class="warning-id" th:text="${warning.id}"/>
+                    <td th:text="${warning.description}"/>
+                    <td th:style="
+                    ${warning.type == WarningType.HIGH} ? 'background-color: red' :
+                    (${warning.type == WarningType.MEDIUM} ? 'background-color: orange' :
+                    (${warning.type == WarningType.LOW} ? 'background-color: green' : ''))"
+
+                        th:text="#{__${warning.type.ref}__}"/>
+
+                    <td class="center-button">
+                        <button class="delete-button">
+                            <svg viewBox="0 0 384 512">
+                                <path fill="#FFFFFF"
+                                      d="M192 0c-41.8 0-77.4 26.7-90.5 64H64C28.7 64 0 92.7 0 128V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H282.5C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM305 273L177 401c-9.4 9.4-24.6 9.4-33.9 0L79 337c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L271 239c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/>
+                            </svg>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="modal-window modal-window-warning">
+        <div class="glass-effect">
+            <h1 th:text="#{swiftly.modal.confirm.warning}"/>
+            <div class="modal-option">
+                <button class="modal-open modal-button">
+                    <svg viewBox="0 0 448 512">
+                        <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
+                    </svg>
+                </button>
+                <button class="modal-close modal-button">
+                    <svg viewBox="0 0 384 512">
+                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+    let warningId
+    const modal = document.querySelector('.modal-window-warning')
+
+    document.querySelectorAll('.warning-row')
+            .forEach(row => {
+                const processButton = row.querySelector('.delete-button')
+
+                processButton.addEventListener('click', function () {
+                    warningId = row.querySelector('.warning-id').innerHTML
+                    modal.style.visibility = 'visible'
+                    modal.style.opacity = '1'
+                })
+            })
+
+    document.querySelector('.modal-window-warning .modal-close')
+            .addEventListener('click', function () {
+                modal.style.visibility = 'hidden'
+                modal.style.opacity = '0'
+            })
+
+    document.querySelector('.modal-window-warning .modal-open')
+            .addEventListener('click', function () {
+                fetch(`http://localhost:8000/api/v1/warnings/process/${ warningId }`, {
+                    method: "PUT"
+                }).finally(() => window.location.reload())
+            })
+
+</script>
+</html>
